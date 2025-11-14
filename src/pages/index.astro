@@ -1,11 +1,187 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Card from '../components/Card.astro';
+import List from '../components/List.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Recursos UCR">
+	<main>
+		<h1>Recursos de la <span class="text-gradient">UCR</span></h1>
+		<p class="instructions">
+			Esto, tan solo es un lugar específico donde tendré lo que pienso más importante de la U,
+			en cuestión de links.
+		</p>
+		<ul role="list" class="link-card-grid">
+
+			<Card
+				href="https://mv1.mediacionvirtual.ucr.ac.cr/"
+				title="Mediación Virtual 1"
+				body="Uno de los entornos virtuales de la UCR."
+				imagen='/public/bitmap.svg'
+			/>
+
+			<Card
+				href="https://mv2.mediacionvirtual.ucr.ac.cr/"
+				title="Mediación Virtual 2"
+				body="Uno de los entornos virtuales de la UCR."
+				imagen='/public/bitmap.svg'
+			/>
+
+			<Card
+				href="https://mv.mediacionvirtual.ucr.ac.cr/login/index.php"
+				title="Mediación Virtual 3"
+				body="Uno de los entornos virtuales de la UCR."
+				imagen='/public/bitmap.svg'
+			/>
+
+			<Card
+				href="https://webmail.ucr.ac.cr/"
+				title="Correo institucional."
+				body="Correo de la UCR."
+				imagen='/public/bitmap3.svg'
+			/>
+	
+			<Card
+				href="https://ematricula.ucr.ac.cr/ematricula/"
+				title="Sistema de matricula de la UCR."
+				body="Sitio donde tus horas de sueño que ya eran dudables, desapareceran con tan solo una elección."
+				imagen='/public/bitmap4.svg'
+			/>
+			<Card
+				href="https://sibdi.ucr.ac.cr/bases-datos.php?TB=3"
+				title="SIBDI"
+				body="Sistema de bibliotecas, documentos e información."
+				imagen='/public/bitmap2.svg'
+			/>
+			<Card
+				href="https://primo-tc-na01.hosted.exlibrisgroup.com/primo-explore/search?vid=SIBDI&lang=es_CR&fromRedirectFilter=true&mode=advanced"
+				title="Info-Fácil"
+				body="Motor de búsqueda para encontrar información dentro de SIBDI."
+				imagen='/public/bitmap2.svg'
+			/>
+
+<Card
+				href="https://normas-apa.org/"
+				title="Normas APA"
+				body="Página oficial de APA Septima Edición, revisar para dudas con los documentos."
+				imagen='/public/bitmap2.svg'
+			/>
+		</ul>
+		<h1>Herramientas de posible <span class="text-gradient2">AYUDA</span></h1>
+		<ul role="list" class="link-link-grid">
+			<List
+				href='https://www.jstor.org/'
+				title='Base de datos Jstore'
+				imagen='/public/bitmap5.svg'
+			/>
+			<List
+				href='https://scholar.google.es/'
+				title='Google academico'
+				imagen='/public/bitmap5.svg'
+			/>
+			<List
+				href='https://pi.ai/'
+				title='Inteligencia Artificial Pi.AI'
+				imagen='/public/bitmap5.svg'
+			/>
+			<List
+				href='https://www.perplexity.ai/search/'
+				title='Inteligencia Artificial Perplexity'
+				imagen='/public/bitmap5.svg'
+			/>
+			<List
+				href='https://chatgpt.com/?oai-dm=1'
+				title='Inteligencia Artificial ChatGPT'
+				imagen='/public/bitmap5.svg'
+			/>
+			<List
+				href='https://mc-coders-blog.vercel.app/'
+				title='Inteligencia Artificial Sarcastico Evie'
+				imagen='/public/bitmap5.svg'
+			/>
+			<List
+				href='https://www.zerogpt.com/?r=gwords&gad_source=1&gclid=CjwKCAjwgdayBhBQEiwAXhMxtmE0N8RIaKY07OjWMpq0g2qaQyDp8y7VdOYN1YVhbsDpAaoI-PIhoBoCfzwQAvD_BwE'
+				title='Detección de Intelegencia Artificial'
+				body ='Utilizarla con cuidado, debido que en ocasiones falla y no detecta correctamente algunas textos hechos con inteligencia articial'
+				
+			/>
+
+			
+
+		</ul>
+	</main>
 </Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.astro-a {
+		position: absolute;
+		top: -32px;
+		left: 50%;
+		transform: translatex(-50%);
+		width: 220px;
+		height: auto;
+		z-index: -1;
+	}
+	h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.text-gradient2 {
+		background-image: var(--accent-gradient2);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		margin-bottom: 2rem;
+		border: 1px solid rgba(var(--accent-light), 25%);
+		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+		padding: 1.5rem;
+		border-radius: 8px;
+	}
+	.instructions code {
+		font-size: 0.8em;
+		font-weight: bold;
+		background: rgba(var(--accent-light), 12%);
+		color: rgb(var(--accent-light));
+		border-radius: 4px;
+		padding: 0.3em 0.4em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent-light));
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 2rem;
+		padding: 0;
+	}
+	.link-link-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 2rem;
+		padding: 0;
+		margin-bottom: 2rem;
+	}
+	
+</style>
